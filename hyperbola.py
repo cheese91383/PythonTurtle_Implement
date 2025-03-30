@@ -24,7 +24,7 @@ def draw_hyperbola():
 
     a = int(scale_a.get())  # 雙曲線的半貫軸
     b = int(scale_b.get())  # 雙曲線的半共軛軸
-
+    c = math.sqrt(a**2 + b**2)  # 焦點距離
     # 繪製雙曲線的右支
     turtle.penup()
     step = 1  # 設置步長，控制繪製精度

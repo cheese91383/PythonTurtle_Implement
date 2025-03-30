@@ -1,3 +1,4 @@
+from calendar import c
 import tkinter as tk
 from tkinter import messagebox
 import turtle
@@ -25,7 +26,9 @@ def draw_hyperbola():
     a = int(scale_a.get())  # 雙曲線的半貫軸
     b = int(scale_b.get())  # 雙曲線的半共軛軸
     c = math.sqrt(a**2 + b**2)  # 焦點距離
-    # 繪製雙曲線的右支
+    
+    
+    # 繪製雙曲線的右半部
     turtle.penup()
     step = 1  # 設置步長，控制繪製精度
     for x in range(a, 300, step):  # x 的範圍從 a 到正無窮
@@ -44,7 +47,7 @@ def draw_hyperbola():
         turtle.goto(x, y)
         turtle.pendown()
 
-    # 繪製雙曲線的左支
+    # 繪製雙曲線的左半部
     turtle.penup()
     for x in range(-a, -300, -step):  # x 的範圍從 -a 到負無窮
         value = (x**2 / a**2) - 1
@@ -61,7 +64,26 @@ def draw_hyperbola():
         y = -b * math.sqrt(value)  # 計算 y（下半部分）
         turtle.goto(x, y)
         turtle.pendown()
+        
+     # 繪製漸進線
+    turtle.penup()
+    turtle.color("blue")
+    for x in range(-300, 301, step):  # x 的範圍從 -300 到 300
+        y = (b / a) * x  # 漸進線 y = (b/a) * x
+        turtle.goto(x, y)
+        turtle.pendown()
+    turtle.penup()
+    for x in range(-300, 301, step):  # x 的範圍從 -300 到 300
+        y = -(b / a) * x  # 漸進線 y = -(b/a) * x
+        turtle.goto(x, y)
+        turtle.pendown()
 
+    # 繪製焦點
+    turtle.penup()
+    turtle.goto(c, 0)
+    turtle.dot(5, "red")  
+    turtle.goto(-c, 0)
+    turtle.dot(5, "red")  
 # 創建主窗口
 root = tk.Tk()
 root.title("Turtle 繪製雙曲線")

@@ -72,7 +72,7 @@ tk.Radiobutton(root, text="上下開口", variable=direction_var, value="上下"
 tk.Radiobutton(root, text="左右開口", variable=direction_var, value="左右").pack()
 
 # 添加滑桿
-scale = tk.Scale(root, from_=1, to=100, orient=tk.HORIZONTAL, label="拋物線焦距", length=300)  # 焦距不能為 0
+scale = tk.Scale(root, from_=-100, to=100, orient=tk.HORIZONTAL, label="拋物線焦距", length=300)  # 焦距不能為 0
 scale.pack()
 
 btn_draw = tk.Button(root, text="繪製圖形", command=draw_parabola)

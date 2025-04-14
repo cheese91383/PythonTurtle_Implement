@@ -141,7 +141,7 @@ def draw_hyperbola():
 
 # 創建主窗口
 root = tk.Tk()
-root.title("Turtle 繪製雙曲線")
+root.title("繪製雙曲線")
 root.geometry("600x400")  # 調整視窗大小
 
 # 方向選擇

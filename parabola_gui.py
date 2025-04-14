@@ -60,7 +60,7 @@ def draw_parabola():
 
 # 創建主窗口
 root = tk.Tk()
-root.title("Turtle 繪製拋物線")
+root.title("繪製拋物線")
 root.geometry("400x300")
 
 # 繪製按鈕

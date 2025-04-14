@@ -24,7 +24,7 @@ def draw_oval():
 
     a = int(scale_a.get())  # 橢圓的長半徑
     b = int(scale_b.get())  # 橢圓的短半徑
-    c = math.sqrt(a**2 - b**2)  # 焦點距離
+    c = math.sqrt(abs(a**2 - b**2))  # 焦點距離
 
     # 繪製橢圓
     turtle.penup()
@@ -44,15 +44,24 @@ def draw_oval():
         y = -b * math.sqrt(value)  # 計算 y（下半部分）
         turtle.goto(x, y)
         turtle.pendown()
-    turtle.penup()
-    turtle.goto(c, 0)
-    turtle.dot(5,"blue")
-    turtle.penup()
-    turtle.goto(-c, 0)
-    turtle.dot(5,"blue")
+    if a**2 - b**2 > 0:
+        turtle.penup()
+        turtle.goto(c, 0)
+        turtle.dot(5,"blue")
+        turtle.penup()
+        turtle.goto(-c, 0)
+        turtle.dot(5,"blue")
+    else:
+        turtle.penup()
+        turtle.goto(0, c)
+        turtle.dot(5,"blue")
+        turtle.penup()
+        turtle.goto(0, -c)
+        turtle.dot(5,"blue")
+        
 # 創建主窗口
 root = tk.Tk()
-root.title("Turtle 繪製橢圓")
+root.title("繪製橢圓")
 root.geometry("400x200")
 
 scale_a = tk.Scale(root, from_=1, to=150, orient=tk.HORIZONTAL, label="橢圓x長度", length=300)  # 長半徑

@@ -22,8 +22,8 @@ def draw_oval():
     draw_axes()
     turtle.speed(0)  # 設置繪圖速度為最快
 
-    a = int(scale_a.get())  # 橢圓的長半徑
-    b = int(scale_b.get())  # 橢圓的短半徑
+    a = int(scale_a.get())  # 橢圓x長度
+    b = int(scale_b.get())  # 橢圓y長度
     c = math.sqrt(abs(a**2 - b**2))  # 焦點距離
 
     # 繪製橢圓
@@ -44,7 +44,7 @@ def draw_oval():
         y = -b * math.sqrt(value)  # 計算 y（下半部分）
         turtle.goto(x, y)
         turtle.pendown()
-    if a**2 - b**2 > 0:
+    if a > b:
         turtle.penup()
         turtle.goto(c, 0)
         turtle.dot(5,"blue")

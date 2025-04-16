@@ -30,6 +30,7 @@ def draw_hyperbola():
 
     if direction == "左右":
         # 繪製左右開口的雙曲線
+        # 繪製右半部分
         turtle.penup()
         for x in range(a, 301, step):  # x 的範圍從 a 到正無窮
             value = (x**2 / a**2) - 1
@@ -43,7 +44,7 @@ def draw_hyperbola():
             value = (x**2 / a**2) - 1
             if value < 0:
                 continue
-            y = -b * math.sqrt(value)  # 計算 y（下半部分）
+            y = -b * math.sqrt(value)  # 繪製下半部分
             turtle.goto(x, y)
             turtle.pendown()
 
@@ -61,12 +62,13 @@ def draw_hyperbola():
             value = (x**2 / a**2) - 1
             if value < 0:
                 continue
-            y = -b * math.sqrt(value)  # 計算 y（下半部分）
+            y = -b * math.sqrt(value)  # 繪製下半部分
             turtle.goto(x, y)
             turtle.pendown()
 
     elif direction == "上下":
         # 繪製上下開口的雙曲線
+        # 繪製上半部分
         turtle.penup()
         for y in range(b, 301, step):  # y 的範圍從 b 到正無窮
             value = (y**2 / b**2) - 1
@@ -80,7 +82,7 @@ def draw_hyperbola():
             value = (y**2 / b**2) - 1
             if value < 0:
                 continue
-            x = -a * math.sqrt(value)  # 計算 x（左半部分）
+            x = -a * math.sqrt(value)  # 繪製左半部分
             turtle.goto(x, y)
             turtle.pendown()
 
@@ -98,7 +100,7 @@ def draw_hyperbola():
             value = (y**2 / b**2) - 1
             if value < 0:
                 continue
-            x = -a * math.sqrt(value)  # 計算 x（左半部分）
+            x = -a * math.sqrt(value)  # 繪製左半部分
             turtle.goto(x, y)
             turtle.pendown()
 

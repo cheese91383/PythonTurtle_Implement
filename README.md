@@ -1,6 +1,6 @@
 # Visualizing Math Using Python Turtle Library
 
-##　Python Turtle 數學圖形視覺化專案 
+## Python Turtle 數學圖形視覺化專案 
 
 ## 功能
 - 二次曲線視覺化（拋物線、橢圓、雙曲線）

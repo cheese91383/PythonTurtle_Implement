@@ -10,7 +10,7 @@
 - 簡單明瞭的界面
   
 ## 版本
-- Python 3
+- Python 3.13
 ## 使用技術
 - turtle 模組（負責圖形繪製）
 - tkinter（建立 GUI 視窗與互動介面）
